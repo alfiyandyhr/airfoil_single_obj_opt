@@ -1,5 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib
+
+matplotlib.use('tkagg')
 
 def plot_init_samples(penalized):
 	init_eval_lhs = np.genfromtxt('../../outputs/lhs/all_true_eval.dat')[3:103]
@@ -106,13 +109,13 @@ def plot_performance(method):
 	# plt.savefig('plots/priority/lhs-1.png')
 
 def plot_all_samples(penalized):
-	all_true_eval_dcgan = np.genfromtxt('../../outputs/dcgan/all_true_eval.dat')[3:]
-	obj_min_dcgan = np.genfromtxt('../../outputs/dcgan/obj_min.dat')
-	all_true_eval_lhs = np.genfromtxt('../../outputs/lhs/all_true_eval.dat')[3:]
-	obj_min_lhs = np.genfromtxt('../../outputs/lhs/obj_min.dat')
-	all_true_eval_mixed = np.genfromtxt('../../outputs/mixed/all_true_eval.dat')[3:]
-	obj_min_mixed = np.genfromtxt('../../outputs/mixed/obj_min.dat')
-	base_indiv = np.genfromtxt('../../outputs/lhs/all_true_eval.dat')[0]
+	all_true_eval_dcgan = np.genfromtxt('summary/dcgan/all_true_eval.dat')[3:]
+	obj_min_dcgan = np.genfromtxt('summary/dcgan/obj_min.dat')
+	all_true_eval_lhs = np.genfromtxt('summary/lhs/all_true_eval.dat')[3:]
+	obj_min_lhs = np.genfromtxt('summary/lhs/obj_min.dat')
+	all_true_eval_mixed = np.genfromtxt('summary/mixed/all_true_eval.dat')[3:]
+	obj_min_mixed = np.genfromtxt('summary/mixed/obj_min.dat')
+	base_indiv = np.genfromtxt('summary/lhs/all_true_eval.dat')[0]
 	plt.axvspan(-10,100,0.0,1.0,facecolor='darkgrey', alpha=0.5)
 	plt.axvspan(100,1000,0.0,1.0,facecolor='lightgrey', alpha=0.5)
 
